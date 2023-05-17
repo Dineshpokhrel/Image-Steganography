@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}" > 
+    <title>Image Steganography</title>
+  </head>
+
+  <body class="bg-light" >
+   <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+      <nav class="navbar navbar-expand-lg" style="background-color: rgba(255, 165, 0, 0.2);">
+   <a class="navbar-brand" href="{{url_for('index')}}">Hide Image</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+   </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link" href="{{url_for('index')}}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('encrypt')}}">Encrypt</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('decrypt')}}">Decrypt</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('about')}}">About us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+
+
+
+<h3 class="text-center"> <b> DCT IDCT </b></h3>
+<div class=" container px-5 py-3" style="font-family: Arial, Helvetica, sans-serif; font-size: 18px;" >
+
+<p style="text-indent: 80px;">
+  In today's digital world, data security has become a crucial aspect. Protecting data from unauthorized access and interception is essential. 
+  One of the most common techniques used to protect data is steganography. Steganography is the art of hiding secret data in a cover image or file,
+   so that it cannot be easily detected. One of the popular techniques for image steganography is the use of Discrete Cosine Transform (DCT) and Inverse
+   Discrete Cosine Transform (IDCT).</p>
+
+<h5 class="py-3"><p><b >DCT and IDCT in Image Steganography</b></p></h5>
+
+
+<p style="text-indent: 80px;">DCT and IDCT are widely used in image steganography for hiding one image within another. The basic idea behind using DCT and IDCT in image steganography is
+ to transform an image from the spatial domain to the frequency domain, embed a secret image in the frequency domain, and then transform the modified image back 
+ to the spatial domain.</p>
+</br>
+
+<div>
+<img src="{{ url_for('static', filename='image/encryptdecrypt.jpg') }}" style="width:400px; height:400px;  display: block; margin-left: auto; margin-right: auto; }"  alt="dctidct image">
+</div>
+</br>
+<p style="text-indent: 80px;">The DCT and IDCT are mathematical transformations that convert an image from the spatial domain to the frequency domain and back to the spatial domain, respectively.
+ In the frequency domain, the image is represented as a set of coefficients that correspond to different frequencies. The high-frequency coefficients in the DCT domain
+  represent the fine details and edges of the image, while the low-frequency coefficients represent the smooth regions of the image.</p>
+
+<p>
+<h5 class="py-3"><b>Embedding an Image in Another Image using DCT and IDCT</b></br></h5>
+
+The following are the steps involved in embedding an image in another image using DCT and IDCT:</br>
+
+1.Divide the cover image into blocks of a fixed size.</br>
+
+2.Convert each block of the cover image into the frequency domain using DCT.</br>
+
+3.Convert the secret image into the frequency domain using DCT.</br>
+
+4.Modify the high-frequency coefficients of the cover image with the corresponding coefficients of the secret image.</br>
+
+5.Convert the modified image back to the spatial domain using IDCT.</br>
+
+6.The result is a modified cover image that contains the hidden secret image. Since the modifications are made to the high-frequency coefficients,
+ the changes are usually imperceptible to the human eye.
+</p>
+
+<p>
+<h5 class="py-3"><b>Advantages of DCT and IDCT in Image Steganography</b></br></h5>
+
+Using DCT and IDCT in image steganography provides several advantages, such as:</br>
+
+<b>Capacity:</b> The amount of secret data that can be hidden in the cover image using DCT-based steganography is relatively high compared to other steganography techniques.</br>
+
+<b>Imperceptibility:</b> The modifications made to the high-frequency coefficients of the cover image are usually imperceptible to the human eye, making the modified image
+ visually similar to the original image.</br>
+
+<b>Robustness:</b> The modifications made to the high-frequency coefficients of the cover image are usually robust to common image processing operations such as cropping,
+ resizing, and compression.</br>
+
+</p>
+
+<h4 class="py-3"><b>Conclusion</b></h4>
+<p style="text-indent: 50px;">DCT and IDCT are widely used in image steganography to hide one image within another. Using DCT and IDCT in image steganography provides high capacity, 
+imperceptibility, and robustness, making it a popular technique for hiding secret data in images. With the increasing need for data security, the use of DCT and IDCT in image steganography 
+is expected to grow further in the future.</p>
+
+</div>
+
+
+
+
+
+<!-- Footer -->
+<footer class="text-center text-lg-start text-muted" style="background-color: rgba(255, 165, 0, 0.2);" >
+
+ 
+    <section class="py-3">
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3 text-secondary"></i>Image Hide..
+            </h6>
+            <p>
+              The secret information is hidden in a way that it not visible to the human eyes.
+            </p>
+          </div>
+  
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Important Links
+            </h6>
+            <p>
+              <a href="{{url_for('index')}}" class="text-reset">Homepage</a>
+            </p>
+            <p>
+              <a href="{{url_for('encrypt')}}" class="text-reset">Encrypt</a>
+            </p>
+            <p>
+              <a href="{{url_for('decrypt')}}" class="text-reset">Decrypt</a>
+            </p>
+          </div>
+  
+  
+           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p><i class="fas fa-home me-3 text-secondary"></i>Mount Annapurna Campus</p>
+              <p>
+                <i class="fas fa-envelope me-3 text-secondary"></i>
+                Parsyang 5,Pokhara
+              </p>
+              <p><i class="fas fa-phone me-3 text-secondary"></i>macpokhara.edu.np</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      </div>
+    </section>
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(255, 165, 0, 0.6);">
+      © 2023 Copyright
+     <!-- <a class="text-reset fw-bold" href="{{url_for('index')}}">DP</a> -->
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+  
+  
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+  </html>

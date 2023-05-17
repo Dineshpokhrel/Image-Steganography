@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/style.css')}}" > 
+    <title>Image Steganography</title>
+  </head>
+
+
+
+  <body class="bg-light" >
+   <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+      <nav class="navbar navbar-expand-lg" style="background-color: rgba(255, 165, 0, 0.2);">
+   <a class="navbar-brand" href="{{url_for('index')}}">Hide Image</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+   </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item ">
+        <a class="nav-link" href="{{url_for('index')}}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('encrypt')}}">Encrypt</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('decrypt')}}">Decrypt</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{{url_for('about')}}">About us</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<h3 class="text-center"> <b> Alpha Blending </b></h3>
+
+<div class="container px-5 py-3" style="font-family: Arial, Helvetica, sans-serif; font-size: 18px;">
+
+  <p style="text-indent: 50px;">Alpha blending is a commonly used technique in image processing and graphics, where two or more images are combined to create a composite image.
+  It is a popular technique in image steganography, where it is used to embed secret data in an image. In this blog post, we will discuss how alpha 
+  blending is used in image steganography.<p>
+
+  <h5 class="py-3"><b>Alpha Blending in Image Steganography</b></h>
+  </br>
+
+<p style="text-indent: 50px;">Alpha blending is a process of combining two images by taking a weighted average of the pixels from the two images. The result is a composite
+image that contains the properties of both images. In image steganography, alpha blending is used to embed a secret image in a cover image.</p>
+<p>
+
+</br>
+
+<div>
+<img src="{{ url_for('static', filename='image/alphablending.jpg') }}" style="width:400px; height:400px;  display: block; margin-left: auto; margin-right: auto; }"  alt="dctidct image">
+</div>
+</br>
+
+The process of embedding a secret image in a cover image using alpha blending involves the following steps:</br>
+
+1.Convert the secret image and the cover image to the same color space, such as RGB or YUV.</br>
+
+2.Divide the cover image and the secret image into blocks of a fixed size.</br>
+
+3.Calculate the alpha value for each block of the cover image, which determines the weight of the cover image in the composite image.</br>
+
+4.Calculate the inverse alpha value for each block of the secret image, which determines the weight of the secret image in the composite image.</br>
+
+5.Blend the two images by taking a weighted average of the pixels from the two images, using the alpha and inverse alpha values calculated in steps 3 and 4.</br>
+
+6.Repeat steps 3-5 for all blocks of the cover image and secret image.</br>
+
+7.The resulting composite image contains the embedded secret image.</br>
+
+</p>
+
+<h5 class="py-3"><b>Advantages of Alpha Blending in Image Steganography</b></h5>
+
+<p style="text-indent: 50px;">Using alpha blending in image steganography provides several advantages, such as:
+
+Imperceptibility: The modifications made to the cover image are usually imperceptible to the human eye, making the modified image visually similar to the original image.
+
+Robustness: The modifications made to the cover image are usually robust to common image processing operations such as cropping, resizing, and compression.
+
+Capacity: The amount of secret data that can be hidden in the cover image using alpha blending is relatively high compared to other steganography techniques.
+
+Security: The embedded secret data is encrypted before it is embedded in the cover image, providing an additional layer of security.
+
+</p>
+
+<h5 class="py-3"><b>Conclusion</b></h5>
+
+<p>Alpha blending is a popular technique in image steganography, where it is used to embed secret data in an image. Using alpha blending in image steganography provides
+   imperceptibility, robustness, high capacity, and security, making it a popular choice for hiding secret data in images. With the increasing need for data security, the 
+   use of alpha blending in image steganography is expected to grow further in the future.
+  </p>
+</diV>
+
+
+
+
+
+
+
+
+<!-- Footer -->
+<footer class="text-center text-lg-start text-muted" style="background-color: rgba(255, 165, 0, 0.2);" >
+
+ 
+    <section class="py-3">
+      <div class="container text-center text-md-start mt-5">
+        <div class="row mt-3">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              <i class="fas fa-gem me-3 text-secondary"></i>Image Hide..
+            </h6>
+            <p>
+              The secret information is hidden in a way that it not visible to the human eyes.
+            </p>
+          </div>
+  
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4">
+              Important Links
+            </h6>
+            <p>
+              <a href="{{url_for('index')}}" class="text-reset">Homepage</a>
+            </p>
+            <p>
+              <a href="{{url_for('encrypt')}}" class="text-reset">Encrypt</a>
+            </p>
+            <p>
+              <a href="{{url_for('decrypt')}}" class="text-reset">Decrypt</a>
+            </p>
+          </div>
+  
+  
+           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+              <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+              <p><i class="fas fa-home me-3 text-secondary"></i>Mount Annapurna Campus</p>
+              <p>
+                <i class="fas fa-envelope me-3 text-secondary"></i>
+                Parsyang 5,Pokhara
+              </p>
+              <p><i class="fas fa-phone me-3 text-secondary"></i>macpokhara.edu.np</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      </div>
+    </section>
+  
+    <!-- Copyright -->
+    <div class="text-center p-4" style="background-color: rgba(255, 165, 0, 0.6);">
+      © 2023 Copyright
+     <!-- <a class="text-reset fw-bold" href="{{url_for('index')}}">DP</a> -->
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+  
+  
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+  </html>

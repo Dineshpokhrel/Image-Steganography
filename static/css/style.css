@@ -1,0 +1,29 @@
+.nav-item.active .nav-link {
+    font-weight: bold;
+    color: rgba(255, 165, 0, 1);
+  }
+.nav-bar .nav-link{
+  color: rgba(255, 165, 0, 1);
+}
+.nav-link :hover{
+  color: rgba(255, 165, 0, 1);
+}
+.social-link {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+  }
+  
+.social-link:hover,
+.social-link:focus {
+    background: #ddd;
+    text-decoration: none;
+    color: #555;
+  }
